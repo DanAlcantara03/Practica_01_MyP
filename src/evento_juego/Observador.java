@@ -1,4 +1,5 @@
-package eventojuego;
+package src.evento_juego;
+
 /**
  * Interfaz que nos modela los objetos que van a observar lo que 
  * el objeto especifico de la interfaz Sujeto les quiere informar. 

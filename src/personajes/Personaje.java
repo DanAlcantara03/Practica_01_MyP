@@ -1,4 +1,4 @@
-package personajes;
+package src.personajes;
 
 /**
  * Esta clase modela el comportamiento que un personaje de un videojuego
@@ -34,7 +34,7 @@ public abstract class Personaje{
      * entonces si es verdad la variable de clase defensaActiva el ataque del personaje
      * atacante se vea reducida en un porcentaje contrario a esta defensa.(ver metodo bajar vida)
      */
-    protected Personaje(int vida, int ataque, int defensa){
+    protected Personaje(int vida, int ataque, double defensa){
         this.vida = vida;
         this.ataque = ataque;
         this.defensa = defensa;
@@ -81,6 +81,8 @@ public abstract class Personaje{
         p.bajarVida(ataque);
     }
 
+    public abstract void atacarConPoder(Personaje p);
+
     /**
      * Metodo auxiliar pensado para que durante la batalla el personaje tenga la 
      * opción de defenderse para asi recibir menos daño dependiendo de la defensa
@@ -103,7 +105,7 @@ public abstract class Personaje{
      * Metodo auxiliar que nos ayuda a bajarle la vida al personaje al atacarlo.
      * @param ataque El ataque del personaje que ataco a este personaje.
      */
-    private void bajarVida(int ataque){
+    protected void bajarVida(int ataque){
         if(defensaActiva){
             vida -= (ataque*(1-defensa));
         }else{
