@@ -1,3 +1,5 @@
+package personajes;
+
 /**
  * Esta clase modela el comportamiento que un personaje de un videojuego
  * deberia tener.
