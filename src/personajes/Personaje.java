@@ -42,6 +42,14 @@ public abstract class Personaje{
     }
 
     /**
+     * Metodo que nos regresa el nombre del personaje que extiende a está clase, lo
+     * ponemos a modo de metodo abstracto por que se nos hace un poco repetitivo poner
+     * una variable nombre.
+     * @return El nombre del personaje 
+     */
+    public abstract String getNombre();
+
+    /**
      * Metodo que nos ayuda a poder visualizar como es el personaje que vamos a poner
      * a pelear durante el videojuego ya sea una representación grafica del personaje
      * o simplemente su nombre, vida, ataque y defensa, o ambas en una sola.
@@ -77,10 +85,12 @@ public abstract class Personaje{
     
     /**
      * Metodo pensado para atacar a otro personaje.
-     * @param Personaje Es el personaje al cual queremos atacar.
+     * @param p Es el personaje al cual queremos atacar.
+     * @return Nos devuelve una cadena con las especificaciónes de como este personaje
+     * ataco otro(s).
      */
-    public void atacar(Personaje p){
-        p.bajarVida(ataque());
+    public String atacar(Personaje p){
+        return p.bajarVida(ataque());
     }
 
     /**
@@ -105,12 +115,15 @@ public abstract class Personaje{
      * Metodo auxiliar que nos ayuda a bajarle la vida al personaje al atacarlo.
      * @param ataque El ataque del personaje que ataco a este personaje.
      */
-    private void bajarVida(int ataque){
+    private String bajarVida(int ataque){
+        // haz lo necesario para que al estar la defensa activa diga algo
+        // y despues solo diga el ataque.
         if(defensaActiva){
             vida -= (ataque*(1-defensa()));
         }else{
             vida -= ataque;
         }
+        return "";
     }
 
     /**
@@ -131,4 +144,15 @@ public abstract class Personaje{
      */
     protected abstract double defensa();
 
+    /**
+     * 
+     * @return
+     */
+    protected abstract String mensajeAtaque();
+
+    /**
+     * 
+     * @return
+     */
+    protected abstract String mensajeDefensa();
 }

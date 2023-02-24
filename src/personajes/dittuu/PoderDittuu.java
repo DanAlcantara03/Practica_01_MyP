@@ -12,7 +12,7 @@ public interface PoderDittuu {
      * "Si no queremos que este metodo haga practicamente nada, entonces, que regrese 0 si
      * sumamos el ataque, o 1 si lo multiplicamos por el poder que ya tiene el personaje"
      * Este metodo esta pensado para ser usado en conjunto con el metodo abstracto ataque()
-     * de la clase Personaje sobre Dittuu, al implementar dicho metodo de manera que usaremos
+     * de la clase Personaje sobre Dittuu, al implementar dicho metodo, de manera que usaremos
      * el ataque por defecto de dittuu y le añadiremos este ataque extra.
      * @return El poder de ataque extra que se le quiere agregar al personaje.
      */
