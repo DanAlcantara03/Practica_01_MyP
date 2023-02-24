@@ -3,20 +3,28 @@ package evento_juego;
 import java.util.LinkedList;
 
 /**
- * 
+ * Clase que modela el modelo 
  * 
  */
 public class EventoDeJuego implements Sujeto{
 
     /* La lista de los espectadores */
     LinkedList<Espectador> espectadores;
-    /*  */
+    /* String que va a tener el estado del juego. */
     String estadoDelJuego;
 
+    /**
+     * 
+     * @return
+     */
     public String getEstadoDelJuego() {
         return estadoDelJuego;
     }
 
+    /**
+     * 
+     * @param estadoDelJuego
+     */
     public void setEstadoDelJuego(String estadoDelJuego) {
         this.estadoDelJuego = estadoDelJuego;
     }
@@ -33,6 +41,8 @@ public class EventoDeJuego implements Sujeto{
 
     @Override
     public void notificar(){
-        // Vasques 
+        for(Espectador espectador: espectadores){
+            espectador.actualizar();
+        }
     }
 }

@@ -45,7 +45,7 @@ public abstract class Personaje{
      * Metodo que nos ayuda a poder visualizar como es el personaje que vamos a poner
      * a pelear durante el videojuego ya sea una representación grafica del personaje
      * o simplemente su nombre, vida, ataque y defensa, o ambas en una sola.
-     * @return La representación en cadena del personaje ya sea una imagen hecha con ____
+     * @return La representación en cadena del personaje ya sea una imagen hecha con askii
      * o el estado del personaje i.e. la vida su ataque y su defensa, o ambas.
      */
     public abstract String verPersonaje();
