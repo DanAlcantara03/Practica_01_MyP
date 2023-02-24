@@ -18,7 +18,16 @@ public class Bitacora {
      * @param path la ruta en donde quieres guradar la bitacora
      */
     public Bitacora(String path){
+        this.path = path;
         crearBitacora(path);
+    }
+
+    /**
+     * Getter del path en donde se encuentra la bitacora
+     * @return el path de la bitacora
+     */
+    public String getPath(){
+        return path;
     }
 
     /**

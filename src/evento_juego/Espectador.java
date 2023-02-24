@@ -1,9 +1,9 @@
 package evento_juego;
 
-import java.io.File;
-
 /**
- * Clase que nos ayuda a modelar los espectadores que van a 
+ * Clase que nos ayuda a modelar los espectadores que van a mirar el EventoDeJuego, 
+ * esta clase es parte del patron de diseño observer y una implementación concreta
+ * de la interfaz Observador.
  */
 public class Espectador implements Observador{
 
@@ -16,10 +16,13 @@ public class Espectador implements Observador{
     /* El estado actual del juego */
     String estadoActual;
     /* La bitacora que va a tener el espectador */
-    Bitacora bitacora = new Bitacora("../"+idEspectador+".txt");
+    Bitacora bitacora;
 
     /**
      * Constructor por parametros de un espectador.
+     * @param idEspectador El id del espectador.
+     * @param personajeApoyado El personaje al que va a apoyar el espectador.
+     * @param evento El evento del juego que esta viendo el espectador.
      */
     public Espectador(String idEspectador, String personajeApoyado, EventoDeJuego evento){
         this.idEspectador = idEspectador;
@@ -27,26 +30,44 @@ public class Espectador implements Observador{
         this. evento = evento;
         evento.registrar(this);
         estadoActual = evento.getEstadoDelJuego();
+        bitacora = new Bitacora("../"+getIdEspectador()+".txt");
+        bitacora.escribir("idEspectador: " + idEspectador);
+        bitacora.escribir("personajeApoyado: " + personajeApoyado);
+        bitacora.escribir(estadoActual);
     }
 
     /**
-     * Metodo que nos regresa el estado actual del juego.
+     * Metodo que nos imprime(en terminal) el estado actual del juego, y ademas 
+     * escribe dicho estado en una bitacora.
+     * Este metodo está pensado para que cada vez que el EventoDeJuego haga un 
+     * anunció, dicho anunció se mande a todos los espectadores que están viendo
+     * el juego.
      */
     @Override
     public void actualizar(){
         estadoActual = evento.getEstadoDelJuego();
+        bitacora.escribir(estadoActual);
+        verEstadoActual();
     }
 
     /**
-     * Metodo geter para el IdEspectador
+     * Metodo get para obtener el IdEspectador.
      * @return nos regresa el id del espectador.
      */
-    public String getIdEspectador() {
+    public String getIdEspectador(){
         return idEspectador;
     }
 
     /**
-     * Metodo para que el espectador deje de ver el juego.
+     * Metodo get para obtener el personaje apooyado.
+     * @return el personaje que esta apoyando el espectador.
+     */
+    public String getPersonajeApoyado(){
+        return personajeApoyado;
+    }
+
+    /**
+     * Metodo para que el espectador pueda dejar de ver el juego si asi lo desea.
      */
     public void dejarDeVerJuego(){
         evento.remover(this);
@@ -60,4 +81,5 @@ public class Espectador implements Observador{
         edo += estadoActual;
         System.out.println(edo);
     }
+
 }
