@@ -1,15 +1,18 @@
-package personajes.meganman;
+package personajes.korby;
 
 import personajes.Personaje;
 
-public class MeganMan extends Personaje{
-    
-    PoderMeganMan poder;
+/**
+ * 
+ */
+public class Korby extends Personaje{
+
+    PoderKorby poder;
 
     /**
      * Constructor unico y por defecto del personaje Dittuu.
      */
-    public MeganMan(){
+    public Korby(){
         super(200,30,.3);
     }
 

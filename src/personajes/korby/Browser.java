@@ -1,9 +1,9 @@
-package personajes.dittuu;
+package personajes.korby;
 
 /**
  * / Escribe lo que representa esta clase
  */
-public class Miawmbo implements PoderDittuu{
+public class Browser implements PoderKorby{
 
     @Override
     public int poderAtaque(){
@@ -12,7 +12,7 @@ public class Miawmbo implements PoderDittuu{
 
     @Override
     public double poderDefensa(){
-        return 0.4;
+        return 0.7;
     }
 
     @Override
@@ -24,9 +24,9 @@ public class Miawmbo implements PoderDittuu{
     @Override
     public String mensajeDefensa(){
         String msj = "";
-        msj += "Dittuu se ha transformado en Miawmbo esquivando algunos ataques de sus contrincantes";
-        msj += " mientras baila UNA GATITA QUE LE GUSTA EL MAMBO";
-        msj += "Su defensa se ha aumentado 0.4";
+        msj += "Korby se ha comido a Browser y se ha escondido en su caparazon evitando los ataques";
+        msj += "de sus contrincantes mientras busca como hackear el juego";
+        msj += "Su defensa se ha aumentado 0.7";
         return msj;
     }
 }

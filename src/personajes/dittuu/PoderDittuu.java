@@ -32,7 +32,7 @@ public interface PoderDittuu {
 
     /**
      * Metodo que nos ayuda a visualizar como es que se le agrega mas ataque a Dittuu
-     * al convertirse en otro poquemon con solo mirarlo.
+     * al convertirse en otro chinpokomon con solo mirarlo.
      * @return Un string con las especificaciónes de como con este poder es que dittu
      * aumento su ataque o "" en caso de que este poder no suba el ataque si no solo 
      * la defensa.
@@ -41,7 +41,7 @@ public interface PoderDittuu {
 
     /**
      * Metodo que nos ayuda a visualizar como es que se le agrega la defensa a Dittuu
-     * al convertirse en otro poquemon con solo mirarlo
+     * al convertirse en otro chinpokomon con solo mirarlo
      * @return Un string con las especificaciónes de como con este poder es que dittuu
      * aumento su defensa o "" en caso de que este poder no suba la defensa si no solo
      * el ataque.

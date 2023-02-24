@@ -1,9 +1,9 @@
-package personajes.dittuu;
+package personajes.meganman;
 
 /**
  * / Escribe lo que representa esta clase
  */
-public class Miawmbo implements PoderDittuu{
+public class Wachador implements PoderMeganMan{
 
     @Override
     public int poderAtaque(){
@@ -12,7 +12,7 @@ public class Miawmbo implements PoderDittuu{
 
     @Override
     public double poderDefensa(){
-        return 0.4;
+        return 0.7;
     }
 
     @Override
@@ -24,9 +24,9 @@ public class Miawmbo implements PoderDittuu{
     @Override
     public String mensajeDefensa(){
         String msj = "";
-        msj += "Dittuu se ha transformado en Miawmbo esquivando algunos ataques de sus contrincantes";
-        msj += " mientras baila UNA GATITA QUE LE GUSTA EL MAMBO";
-        msj += "Su defensa se ha aumentado 0.4";
+        msj += "MeganMan ha adquirido los poderes de Wachador prediciendo los ataques de sus";
+        msj += "contrincantes para esquivarlos";
+        msj += "Su defensa se ha aumentado 0.7";
         return msj;
     }
 }
