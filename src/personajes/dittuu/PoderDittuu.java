@@ -1,4 +1,4 @@
-package src.personajes.dittuu;
+package personajes.dittuu;
 
 /**
  * Interfaz que modela un poder en especifico que puede 

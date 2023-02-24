@@ -1,6 +1,6 @@
-package src.personajes.dittuu;
+package personajes.dittuu;
 
-import src.personajes.Personaje;
+import personajes.Personaje;
 
 /**
  * 
