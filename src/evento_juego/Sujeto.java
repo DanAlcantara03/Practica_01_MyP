@@ -1,4 +1,4 @@
-package src.evento_juego;
+package evento_juego;
 
 /**
  * Interfaz que modela al sujeto que quiere informar o comunicar

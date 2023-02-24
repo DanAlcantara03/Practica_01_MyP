@@ -1,1 +1,1 @@
-package src.personajes.dittuu;
+package personajes.dittuu;
