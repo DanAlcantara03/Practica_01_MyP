@@ -8,13 +8,13 @@ package personajes;
 public abstract class Personaje{
 
     /* La vida que tiene el personaje */
-    private int vida;
+    protected int vida;
     /* El ataque que tiene el personaje */
-    private int ataque;
+    protected int ataque;
     /* Tiene que ser un número entre 0 y 1 */
-    private double defensa;
+    protected double defensa;
     /* Nos ayuda a saber si el personaje tiene la defensa a activa o no */
-    private boolean defensaActiva;
+    protected boolean defensaActiva;
 
     /**
      * Constructor vacio.
