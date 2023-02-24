@@ -1,4 +1,4 @@
-package src.personajes;
+package personajes;
 
 /**
  * Esta clase modela el comportamiento que un personaje de un videojuego
@@ -26,7 +26,7 @@ public abstract class Personaje{
      * heredan esta clase abstracta mediante la función super() 
      * @param vida Es la vida que va a tener el personaje se recomienda poner
      * un número que sea congruente para poder hacer que el ataque del oponente
-     * baje lo suficiente para matarlo en 10-15 ataques().
+     * baje lo suficiente para matarlo en 10-15 ataques normales(sin poder).
      * @param ataque Es el ataque que va a tener el personaje se recomienda que sea
      * congruente para poder hacer que la vida del oponente no baje tan rapido.
      * @param defensa Esta variable está pensada para que sea un numero dentro del
@@ -43,7 +43,8 @@ public abstract class Personaje{
 
     /**
      * Metodo que nos ayuda a poder visualizar como es el personaje que vamos a poner
-     * a pelear durante el videojuego.
+     * a pelear durante el videojuego ya sea una representación grafica del personaje
+     * o simplemente su nombre, vida, ataque y defensa, o ambas en una sola.
      * @return La representación en cadena del personaje ya sea una imagen hecha con ____
      * o el estado del personaje i.e. la vida su ataque y su defensa, o ambas.
      */
@@ -53,7 +54,7 @@ public abstract class Personaje{
      * Metodo para obtener la vida del personaje
      * @return Devuelve la vida del personaje
      */
-    public int getVida() {
+    public int getVida(){
         return vida;
     }
 
@@ -62,26 +63,25 @@ public abstract class Personaje{
      * @return Devuelve el ataque del personaje
      */
     public int getAtaque(){
-        return ataque;
+        return ataque();
     }
 
     /**
      * Metodo para obtener la defensa del personaje
-     * @return Nos regresa una representación de la defensa del personaje en un rango
-     * del 1 al 100.
+     * @return Nos regresa una representación de la defensa total del personaje en 
+     * un rango del 1 al 100.
      */
-    public int defensa(){
-        return (int)defensa*100;
+    public int getDefensa(){
+        return (int)defensa()*100;
     }
     
     /**
+     * Metodo pensado para atacar a otro personaje.
      * @param Personaje Es el personaje al cual queremos atacar.
      */
     public void atacar(Personaje p){
-        p.bajarVida(ataque);
+        p.bajarVida(ataque());
     }
-
-    public abstract void atacarConPoder(Personaje p);
 
     /**
      * Metodo auxiliar pensado para que durante la batalla el personaje tenga la 
@@ -95,7 +95,7 @@ public abstract class Personaje{
     /**
      * Metodo auxiliar pensado para que durante la batalla solo se pueda tener la 
      * caracteristica de defenderse durante cierto tiempo determinado o dada una 
-     * condición
+     * condición.
      */
     public void bajarDefensa(){
         defensaActiva = false;
@@ -105,11 +105,30 @@ public abstract class Personaje{
      * Metodo auxiliar que nos ayuda a bajarle la vida al personaje al atacarlo.
      * @param ataque El ataque del personaje que ataco a este personaje.
      */
-    protected void bajarVida(int ataque){
+    private void bajarVida(int ataque){
         if(defensaActiva){
-            vida -= (ataque*(1-defensa));
+            vida -= (ataque*(1-defensa()));
         }else{
             vida -= ataque;
         }
     }
+
+    /**
+     * Metodo auxiliar pensado para que las clases que heredan esta clase puedan
+     * implementar el poder de ataque del personaje al que cambian dependiendo de
+     * la estrateguia.
+     * @return el ataque normal más algo más de ataque (dependiendo de como se quiera
+     * implementar).
+     */
+    protected abstract int ataque();
+
+    /**
+     * Metodo auxiliar pensado para que las clases que heredan esta clase puedan
+     * implementar el poder de ataque del personaje al que cambian dependiendo de que
+     * estrateguia se siga.
+     * @return la defensa más algo más de defensa (dependiendo de como se quiera
+     * implementar).
+     */
+    protected abstract double defensa();
+
 }

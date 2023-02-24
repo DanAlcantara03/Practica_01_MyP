@@ -1,4 +1,4 @@
-package src.evento_juego;
+package evento_juego;
 
 /**
  * Enumeración de Personajes Apoyados por el Espectador. Por el momento
