@@ -1,5 +1,8 @@
 package personajes.dittuu; 
 
+/**
+ * Clase que modela un poder especifico de Dittuu
+ */
 public class Tristten implements PoderDittuu{ 
 
     /**
@@ -19,7 +22,7 @@ public class Tristten implements PoderDittuu{
      */
     @Override
     public double poderDefensa(){
-        return 0;// Pon un numero que aumente la defensa entre [0-1]
+        return 0;
     }
 
     /**

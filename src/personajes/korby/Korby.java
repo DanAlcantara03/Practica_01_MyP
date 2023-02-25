@@ -3,7 +3,9 @@ package personajes.korby;
 import personajes.Personaje;
 
 /**
- * 
+ * Clase que modela al personaje Korby de la franquicia nientiendo, este personaje
+ * tiene la habilidad de comerse a otros personajes, y al hacer dicha acción, obtiene
+ * sus poderes y una que otra de sus características.
  */
 public class Korby extends Personaje{
 
@@ -16,6 +18,7 @@ public class Korby extends Personaje{
      */
     public Korby(){
         super(200,30,.3);
+        poder = new PoderPorDefecto();
     }
 
     /**

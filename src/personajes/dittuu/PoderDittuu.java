@@ -1,8 +1,8 @@
 package personajes.dittuu;
 
 /**
- * Interfaz que modela un poder en especifico que puede 
- * llegar a tener Dittuu con tan solo ver a otro chinpokomon.
+ * Interfaz que modela un poder en especifico que puede llegar 
+ * a tener Dittuu con tan solo ver a otro chinpokomon.
  */
 public interface PoderDittuu {
 

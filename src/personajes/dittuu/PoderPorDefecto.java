@@ -44,7 +44,7 @@ public class PoderPorDefecto implements PoderDittuu{
      */
     @Override
     public String mensajeDefensa(String p){
-        String msj = "Dittuu se defendi de " + p + ".";
+        String msj = "Dittuu se defendio de " + p + ".";
         return msj;
     }
 }

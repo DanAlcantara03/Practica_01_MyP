@@ -19,6 +19,7 @@ public class Dittuu extends Personaje{
      */
     public Dittuu(){
         super(200,30,.3);
+        poder = new PoderPorDefecto();
     }
 
     /**
@@ -80,8 +81,8 @@ public class Dittuu extends Personaje{
 
     /**
      * La defensa total que va a tener Dittuu, esta conformada por su defensa por
-     * default más una defensa que le de el poder, dependiendo de cual tenga en el momento
-     * de la pelea.
+     * default más una defensa que le de el poder, dependiendo de cual tenga en el 
+     * momento de la pelea.
      * @return La defensa total de Dittuu (un numero entre el intervalo [0,1]).
      */
     @Override
@@ -108,7 +109,7 @@ public class Dittuu extends Personaje{
      * Es el mensaje de defensa que va a tener el personaje dependiendo de en que
      * chinpokomon se transforme.
      * @param p Es el nombre del personaje que ataca a Dittuu.
-     * @return Un string de como el personaje d se defendio del personaje p.
+     * @return Un string de como Dittuu se defendio del personaje p.
      */
     @Override
     public String mensajeDefensa(String p){

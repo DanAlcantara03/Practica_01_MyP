@@ -1,7 +1,7 @@
 package personajes.dittuu;
 
 /**
- * / Escribe lo que representa esta clase
+ * Clase que modela un poder especifico de Dittuu
  */
 public class Miawmbo implements PoderDittuu{
 

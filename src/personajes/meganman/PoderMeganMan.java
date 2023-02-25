@@ -1,6 +1,5 @@
 package personajes.meganman;
 
-import personajes.Personaje;
 
 /**
  * Interfaz que modela un poder en especifico que puede llegar a tener MeganMan 
@@ -33,22 +32,20 @@ public interface PoderMeganMan{
     public double poderDefensa();
 
     /**
-     * Metodo que nos ayuda a visualizar como es que al agregarsele mas poder a meganman
+     * * Metodo que nos ayuda a visualizar como es que al agregarsele mas poder a meganman
      * ataca con mayor fuerza a sus oponentes.
-     * @param p Meganman.
-     * @param a Es el personaje que es atacado.
+     * @param a Es el nombre del personaje que es atacado por Meganman.
      * @return Un string con las especificaciónes de como con este poder es que MeganMan
-     * 
     */
-    public String mensajeAtaque(Personaje p, Personaje a);
+    public String mensajeAtaque(String a);
 
     /**
      * Metodo que nos ayuda a visualizar como es que al agregarle mas poder de defensa a
      * meganman se defiende con mayor eficazia de sus oponentes.
-     * @param d Meganman.
-     * @param p Es el personaje que ataca.
+     * @param p Es el nombre del personaje que ataca a Meganman.
      * @return Un string con las especificaciones de como con este poder es que MeganMan
      * se defendio del personaje p.
      */
-    public String mensajeDefensa(Personaje d, Personaje p);
+    public String mensajeDefensa(String p);
+    
 }

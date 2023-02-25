@@ -1,10 +1,8 @@
 package personajes.korby;
 
-import personajes.Personaje;
-
 /**
- * Interfaz que modela un poder en especifico que puede llegar a tener Korby 
- * comiendose a otro personaje de Nientiendo.
+ * Interfaz que modela un poder en especifico que puede llegar 
+ * a tener Korby comiendose a otro personaje de Nientiendo.
  */
 public interface PoderKorby {
 
