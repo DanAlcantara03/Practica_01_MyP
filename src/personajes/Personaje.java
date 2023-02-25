@@ -32,7 +32,8 @@ public abstract class Personaje{
      * @param defensa Esta variable está pensada para que sea un numero dentro del
      * intervalo [0,1], para que si es que algun otro personaje ataca a este personaje
      * entonces si es verdad la variable de clase defensaActiva el ataque del personaje
-     * atacante se vea reducida en un porcentaje contrario a esta defensa.(ver metodo bajar vida)
+     * atacante se vea reducida en un porcentaje contrario a esta defensa.(ver metodo 
+     * bajar vida)
      */
     protected Personaje(int vida, int ataque, double defensa){
         this.vida = vida;
@@ -151,7 +152,7 @@ public abstract class Personaje{
      * Metodo auxiliar pensado para que cada que ataques a un personaje
      * te devuleva el como lo atacaste.
      * @param a Es el nombre del personaje que es atacado.
-     * @return Un string de como el personaje p ataco al personaje a.
+     * @return Un string de como el personaje actual ataco al personaje a.
      */
     protected abstract String mensajeAtaque(String a);
 
@@ -159,7 +160,7 @@ public abstract class Personaje{
      * Metodo auxiliar pensado para que cada que alguien te ataque, si es que te
      * alcancaste a defender te devuelva el como te defendiste.
      * @param p Es el nombre del personaje que ataca.
-     * @return Un string de como el personaje d se defendio del personaje p.
+     * @return Un string de como el personaje actual se defendio del personaje p.
      */
     protected abstract String mensajeDefensa(String p);
 }

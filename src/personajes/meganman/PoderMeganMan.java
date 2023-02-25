@@ -8,11 +8,6 @@ import personajes.Personaje;
  */
 public interface PoderMeganMan{
 
-    /* Mensaje por defecto del ataque que viene en la interfaz. */
-    public String MSJ_ATAQUE = " golpeo a ";
-    /* Mensaje por defecto al defenderse que viene en la interfaz. */
-    public String MSJ_DEFENDIENDO = " se defendio de ";
-
     /**
      * Metodo que posiblemente va a aumentar el ataque de MeganMan mediante un poder que le 
      * especifiquemos en la implementación.

@@ -26,15 +26,25 @@ public class PoderPorDefecto implements PoderDittuu{
         return 0;
     }
 
+    /**
+     * Metodo para representar en un String como es que Dittuu golpeo a alguien.
+     * @param a El nombre del personaje al que ataco dittuu.
+     * @return Un mensaje de un ataque normal de Dittuu.
+     */
     @Override
-    public String mensajeAtaque(){
-        String msj = "";
+    public String mensajeAtaque(String a){
+        String msj = "Dittuu golpeo a " + a + ".";
         return msj;
     }
 
+    /**
+     * Metodo para representar en un String como es que Dittuu se defendio de alguien.
+     * @param p El nombre del personaje que ataco a dittuu.
+     * @return Un mensaje de un ataque normal de Dittuu.
+     */
     @Override
-    public String mensajeDefensa(){
-        String msj = "";
+    public String mensajeDefensa(String p){
+        String msj = "Dittuu se defendi de " + p + ".";
         return msj;
     }
 }

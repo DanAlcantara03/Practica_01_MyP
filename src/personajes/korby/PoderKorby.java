@@ -8,11 +8,6 @@ import personajes.Personaje;
  */
 public interface PoderKorby {
 
-    /* Mensaje por defecto del ataque que viene en la interfaz. */
-    public String MSJ_ATAQUE = " golpeo a ";
-    /* Mensaje por defecto al defenderse que viene en la interfaz. */
-    public String MSJ_DEFENDIENDO = " se defendio de ";
-
     /**
      * Metodo que posiblemente va a aumentar el ataque de Korby mediante un poder que le 
      * especifiquemos en la implementación.
@@ -45,7 +40,7 @@ public interface PoderKorby {
      * aumento su ataque o "" en caso de que este poder no suba el ataque si no solo 
      * la defensa.
     */
-    public String mensajeAtaque(Personaje a);
+    public String mensajeAtaque(String a);
 
     /**
      * Metodo que nos ayuda a visualizar como es que se le agrega la defensa a Korby
@@ -55,5 +50,5 @@ public interface PoderKorby {
      * aumento su defensa o "" en caso de que este poder no suba la defensa si no solo
      * el ataque.
      */
-    public String mensajeDefensa(Personaje p);
+    public String mensajeDefensa(String p);
 }

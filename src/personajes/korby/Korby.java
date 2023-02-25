@@ -84,11 +84,19 @@ public class Korby extends Personaje{
         return p;
     }
 
+    /**
+     * Metodo que nos regresa el ataque total de Korby
+     * @return ataque total de Korby
+     */
     @Override
     protected int ataque(){
         return  ataque + poder.poderAtaque();
     }
 
+    /**
+     * Metodo que nos regresa la defensa total de Korby
+     * @return defensa total de Korby
+     */
     @Override
     protected double defensa(){
         return defensa + poder.poderDefensa();
@@ -100,10 +108,10 @@ public class Korby extends Personaje{
      * Es el mensaje de ataque que va a tener el personaje dependiendo de en que 
      * chinpokomon se transforme.
      * @param a Es el personaje que es atacado por Korby.
-     * @return Un string de como el personaje p ataco al personaje a.
+     * @return Un string de como Korby ataco al personaje a.
      */
     @Override
-    public String mensajeAtaque(Personaje a){
+    public String mensajeAtaque(String a){
         return poder.mensajeAtaque(a);
     }
 
@@ -113,10 +121,10 @@ public class Korby extends Personaje{
      * Es el mensaje de defensa que va a tener el personaje dependiendo de en que
      * chinpokomon se transforme.
      * @param p Es el personaje que ataca a Korby.
-     * @return Un string de como el personaje d se defendio del personaje p.
+     * @return Un string de como Korby se defendio del personaje p.
      */
     @Override
-    public String mensajeDefensa(Personaje p){
+    public String mensajeDefensa(String p){
         return poder.mensajeDefensa(p);
     }
 }
