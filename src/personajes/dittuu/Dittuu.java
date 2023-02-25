@@ -15,17 +15,18 @@ public class Dittuu extends Personaje{
     PoderDittuu poder;
 
     /**
-     * Metodo
-     */
-    public String getNombre(){
-        return "Dittuu";
-    }
-
-    /**
      * Constructor unico y por defecto del personaje Dittuu.
      */
     public Dittuu(){
         super(200,30,.3);
+    }
+
+    /**
+     * Getter del nombre del personaje
+     * @return nombre del personaje
+     */
+    public String getNombre(){
+        return "Dittuu";
     }
 
     /**
@@ -72,12 +73,31 @@ public class Dittuu extends Personaje{
         return defensa + poder.poderDefensa();
     }
 
+    /**
+     * Metodo auxiliar pensado para que cada que ataques a un personaje
+     * te devuleva el como lo atacaste.
+     * Es el mensaje de ataque que va a tener el personaje dependiendo de en que 
+     * chinpokomon se transforme.
+     * @param p Es el personaje que ataca.
+     * @param a Es el personaje que es atacado.
+     * @return Un string de como el personaje p ataco al personaje a.
+     */
     @Override
-    public String mensajeAtaque(){
-        return "";
+    public String mensajeAtaque(Personaje p, Personaje a){
+        return poder.mensajeAtaque();
     }
 
-    public String mensajeDefensa(){
-        return "";
+    /**
+     * Metodo auxiliar pensado para que cada que alguien te ataque, si es que te
+     * alcancaste a defender te devuelva el como te defendiste.
+     * Es el mensaje de defensa que va a tener el personaje dependiendo de en que
+     * chinpokomon se transforme.
+     * @param d Es el personaje que se defiende.
+     * @param p Es el personaje que ataca.
+     * @return Un string de como el personaje d se defendio del personaje p.
+     */
+    @Override
+    public String mensajeDefensa(Personaje d, Personaje p){
+        return poder.mensajeDefensa();
     }
 }

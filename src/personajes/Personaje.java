@@ -87,10 +87,10 @@ public abstract class Personaje{
      * Metodo pensado para atacar a otro personaje.
      * @param p Es el personaje al cual queremos atacar.
      * @return Nos devuelve una cadena con las especificaciónes de como este personaje
-     * ataco otro(s).
+     * ataco otro.
      */
     public String atacar(Personaje p){
-        return p.bajarVida(ataque());
+        return p.bajarVida(this);
     }
 
     /**
@@ -113,17 +113,20 @@ public abstract class Personaje{
 
     /**
      * Metodo auxiliar que nos ayuda a bajarle la vida al personaje al atacarlo.
-     * @param ataque El ataque del personaje que ataco a este personaje.
+     * @param a El personaje que nos ataco.
+     * @return Nos devuelve una cadena con lo que paso en este momento de la pelea.
      */
-    private String bajarVida(int ataque){
-        // haz lo necesario para que al estar la defensa activa diga algo
-        // y despues solo diga el ataque.
+    private String bajarVida(Personaje a){
+        String msj = mensajeAtaque(a, this);
         if(defensaActiva){
-            vida -= (ataque*(1-defensa()));
+            vida -= (a.ataque()*(1-defensa()));
+            msj += ",\nPero " + mensajeDefensa(this, a) + ".";
         }else{
-            vida -= ataque;
+            msj += ".";
+            vida -= a.ataque();
         }
-        return "";
+        msj += "\nAhora la vida de " + this.getNombre() + " es de: " + this.getVida();
+        return msj;
     }
 
     /**
@@ -145,14 +148,20 @@ public abstract class Personaje{
     protected abstract double defensa();
 
     /**
-     * 
-     * @return
+     * Metodo auxiliar pensado para que cada que ataques a un personaje
+     * te devuleva el como lo atacaste.
+     * @param p Es el personaje que ataca.
+     * @param a Es el personaje que es atacado.
+     * @return Un string de como el personaje p ataco al personaje a.
      */
-    protected abstract String mensajeAtaque();
+    protected abstract String mensajeAtaque(Personaje p, Personaje a);
 
     /**
-     * 
-     * @return
+     * Metodo auxiliar pensado para que cada que alguien te ataque, si es que te
+     * alcancaste a defender te devuelva el como te defendiste.
+     * @param d Es el personaje que se defiende.
+     * @param p Es el personaje que ataca.
+     * @return Un string de como el personaje d se defendio del personaje p.
      */
-    protected abstract String mensajeDefensa();
+    protected abstract String mensajeDefensa(Personaje d, Personaje p);
 }

@@ -1,8 +1,8 @@
 package personajes.meganman; 
 
 /**
- * Interfaz que modela un poder en especifico que puede 
- * llegar a tener MeganMan al derrotar algún robot y adquirir sus poderes.
+ * Interfaz que modela un poder en especifico que puede llegar a tener MeganMan 
+ * al derrotar algún robot y adquirir sus poderes.
  */
 public interface PoderMeganMan{
 
