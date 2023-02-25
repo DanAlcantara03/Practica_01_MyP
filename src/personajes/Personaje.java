@@ -81,7 +81,7 @@ public abstract class Personaje{
      * un rango del 1 al 100.
      */
     public int getDefensa(){
-        return (int)defensa()*100;
+        return (int)(defensa()*100);
     }
     
     /**

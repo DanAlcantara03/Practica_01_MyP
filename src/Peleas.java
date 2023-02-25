@@ -40,32 +40,50 @@ public class Peleas{
         combate.add(dittuu.verPersonaje());
         while((estaVivo(dittuu) && estaVivo(korby))||(estaVivo(dittuu) && estaVivo(meganman)) || (estaVivo(korby) && estaVivo(meganman))){
             int c = r.nextInt(2);
-            if(c == 0){
-                combate.add(korby.atacar(dittuu));
-                poderAleatorioDittuu();
-            }else{
-                combate.add(korby.atacar(meganman));
-                poderAleatorioMeganMan();
+            if(estaVivo(korby)){
+                if(c == 0){
+                    if(estaVivo(dittuu)){
+                        combate.add(korby.atacar(dittuu));
+                        poderAleatorioDittuu();
+                    }
+                }else{
+                    if(estaVivo(meganman)){
+                        combate.add(korby.atacar(meganman));
+                        poderAleatorioMeganMan();
+                    }
+                }
+                defenderseAleatrio(korby);
             }
-            defenderseAleatrio(korby);
             c = r.nextInt(2);
-            if(c == 0){
-                combate.add(dittuu.atacar(korby));
-                poderAleatorioKorby();
-            }else{
-                combate.add(dittuu.atacar(meganman));
-                poderAleatorioMeganMan();
+            if(estaVivo(dittuu)){
+                if(c == 0){
+                    if(estaVivo(korby)){
+                        combate.add(dittuu.atacar(korby));
+                        poderAleatorioKorby();
+                    }
+                }else{
+                    if(estaVivo(meganman)){
+                        combate.add(dittuu.atacar(meganman));
+                        poderAleatorioMeganMan();
+                    }
+                }
+                defenderseAleatrio(dittuu);
             }
-            defenderseAleatrio(dittuu);
             c = r.nextInt(2);
-            if(c == 0){
-                combate.add(meganman.atacar(korby));
-                poderAleatorioKorby();
-            }else{
-                combate.add(meganman.atacar(dittuu));
-                poderAleatorioDittuu();
+            if(estaVivo(meganman)){
+                if(c == 0){
+                    if(estaVivo(korby)){
+                        combate.add(meganman.atacar(korby));
+                        poderAleatorioKorby();
+                    }
+                }else{
+                    if(estaVivo(dittuu)){
+                        combate.add(meganman.atacar(dittuu));
+                        poderAleatorioDittuu();
+                    }
+                }
+                defenderseAleatrio(meganman);
             }
-            defenderseAleatrio(meganman);
         }
 
         if(estaVivo(korby)){

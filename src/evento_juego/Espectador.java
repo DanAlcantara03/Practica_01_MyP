@@ -27,7 +27,7 @@ public class Espectador implements Observador{
     public Espectador(String idEspectador, String personajeApoyado, EventoDeJuego evento){
         this.idEspectador = idEspectador;
         this.personajeApoyado = personajeApoyado;
-        this. evento = evento;
+        this.evento = evento;
         evento.registrar(this);
         estadoActual = evento.getEstadoDelJuego();
         bitacora = new Bitacora("../"+getIdEspectador()+".txt");
@@ -86,9 +86,9 @@ public class Espectador implements Observador{
     public void gano(){
         if(estadoActual.toLowerCase().contains("gano")){
             if(estadoActual.contains(personajeApoyado)){
-                estadoActual = "El personaje que apoyabas gano!!! (:";
+                estadoActual = personajeApoyado + " gano!!! (:";
             }else{
-                estadoActual = "El personaje que apoyabas perdio ):";
+                estadoActual = personajeApoyado + " perdio ):";
             }
         }
     }

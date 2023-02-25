@@ -15,6 +15,11 @@ public class EventoDeJuego implements Sujeto{
     /* String que va a tener el estado del juego. */
     private String estadoDelJuego;
 
+    public EventoDeJuego() {
+        espectadores = new LinkedList<Espectador>();
+        estadoDelJuego = "";
+    }
+
     /**
      * Getter del estado actual del Juego.
      * @return el estado del juego.
