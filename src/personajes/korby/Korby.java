@@ -16,6 +16,14 @@ public class Korby extends Personaje{
         super(200,30,.3);
     }
 
+    /**
+     * Getter del nombre del personaje
+     * @return nombre del personaje
+     */
+    public String getNombre(){
+        return "Korby";
+    }
+
     @Override
     public String verPersonaje(){
         String p ="";
@@ -62,5 +70,25 @@ public class Korby extends Personaje{
     @Override
     protected double defensa(){
         return defensa + poder.poderDefensa();
+    }
+
+    /**
+     * Es el mensaje de ataque que va a tener el personaje dependiendo de que
+     * personaje se coma
+     * @return El mensaje de ataque del poder de Korby
+     */
+    @Override 
+    public String mensajeAtaque(){
+        return poder.mensajeAtaque();
+    }
+
+     /**
+     * Es el mensaje de defensa que va a tener el personaje dependiendo de que
+     * personaje se coma
+     * @return El mensaje de defensa del poder de Korby
+     */
+    @Override 
+    public String mensajeDefensa(){
+        return poder.mensajeDefensa();
     }
 }

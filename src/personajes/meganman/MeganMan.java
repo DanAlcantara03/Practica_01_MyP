@@ -13,11 +13,26 @@ public class MeganMan extends Personaje{
         super(200,30,.3);
     }
 
+    /**
+     * Getter del nombre del personaje
+     * @return nombre del personaje
+     */
+    public String getNombre(){
+        return "MeganMan";
+    }
+
     @Override
     public String verPersonaje(){
         String p = "";
-        // Aqui ve agregando o el dibujito del personaje o sus atributos
-        //dependiendo del tiempo que te de
+        p +="░░░░░░░░░░░░░░░░░░░░"+"\n";
+        p +="░░░░░░░░▄▄▄▄░░░░░░░░"+"\n";
+        p +="░░░░░▄███░░███▄░░░░░"+"\n";
+        p +="░░░▄█████▄▄█████▄░░░"+"\n";
+        p +="░░░██████░░██████░░░"+"\n";
+        p +="░░█░█▀░░▀██▀░░▀█░█░░"+"\n";
+        p +="░░█░█░░██░░██░░█░█░░"+"\n";
+        p +="░░░▀█░░▄▄▄▄▄▄░░█▀░░░"+"\n";
+        p +="░░░░░▀▄▄▀▀▀▀▄▄▀░░░░░"+"\n";
         return p;
     }
 
@@ -30,4 +45,25 @@ public class MeganMan extends Personaje{
     protected double defensa(){
         return defensa + poder.poderDefensa();
     }
+
+    /**
+     * Es el mensaje de ataque que va a tener el personaje dependiendo de que
+     * robot adquiera sus poderes
+     * @return El mensaje de ataque del poder de MeganMan
+     */
+    @Override 
+    public String mensajeAtaque(){
+        return poder.mensajeAtaque();
+    }
+
+     /**
+     * Es el mensaje de defensa que va a tener el personaje dependiendo de que
+     * robot adquiera sus poderes
+     * @return El mensaje de defensa del poder de MeganMan
+     */
+    @Override 
+    public String mensajeDefensa(){
+        return poder.mensajeDefensa();
+    }
+
 }
