@@ -19,7 +19,7 @@ public class Dittuu extends Personaje{
      */
     public Dittuu(){
         super(200,30,.3);
-        poder = new PoderPorDefecto();
+        poder = new PoderPorDefectoD();
     }
 
     /**

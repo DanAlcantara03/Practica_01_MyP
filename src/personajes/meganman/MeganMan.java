@@ -2,6 +2,11 @@ package personajes.meganman;
 
 import personajes.Personaje;
 
+/**
+ * Clase que modela al personaje MeganMan de la franquicia Copcam, este personaje
+ * tiene la habilidad de replicar los poderes de los robots que derrota, para
+ * así usar dichos poderes a su favor.
+ */
 public class MeganMan extends Personaje{
     
     /* El poder que se le dara a MeganMan dependiendo de a que poder se quiera cambiar
@@ -14,7 +19,17 @@ public class MeganMan extends Personaje{
      */
     public MeganMan(){
         super(200,30,.3);
-        poder = new PoderPorDefecto();
+        poder = new PoderPorDefectoM();
+    }
+
+    /**
+     * Metodo que nos ayuda a que MeganMan adquiera los poderes de robots derrotados
+     * en la franquicia copcam y por ende que adquiera las habilidades de dichos personajes,
+     * por el momento solo hay 4 poderes activos: PoderPorDefecto, Bake, GranOjo y Wachador.
+     * @param poder el poder al que quieres cambiar a MeganMan.
+     */
+    public void replicar(PoderMeganMan poder){
+        this.poder = poder;
     }
 
     /**

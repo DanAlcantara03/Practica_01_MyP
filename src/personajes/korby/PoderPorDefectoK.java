@@ -4,7 +4,7 @@ package personajes.korby;
  * Clase necesaria para que todos los metodos de Korby funciones tanto con poderes
  * como sin poderes, esta clase como dice su nombre es por defecto
  */
-public class PoderPorDefecto implements PoderKorby{
+public class PoderPorDefectoK implements PoderKorby{
     
     /**
      * Metodo para obtener el poder de ataque que le queremos agregar a Korby.

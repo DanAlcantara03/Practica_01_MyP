@@ -4,7 +4,7 @@ package personajes.dittuu;
  * Clase necesaria para que todos los metodos de Dittuu funciones tanto con poderes
  * como sin poderes, esta clase como dice su nombre es por defecto
  */
-public class PoderPorDefecto implements PoderDittuu{
+public class PoderPorDefectoD implements PoderDittuu{
     
     /**
      * Metodo para obtener el poder de ataque que le queremos agregar a dittuu.

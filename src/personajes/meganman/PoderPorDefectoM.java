@@ -4,7 +4,7 @@ package personajes.meganman;
  * Clase necesaria para que todos los metodos de Meganman funciones tanto con poderes
  * como sin poderes, esta clase como dice su nombre es por defecto
  */
-public class PoderPorDefecto implements PoderMeganMan{
+public class PoderPorDefectoM implements PoderMeganMan{
     
     /**
      * Metodo para obtener el poder de ataque que le queremos agregar a Meganman.

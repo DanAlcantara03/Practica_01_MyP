@@ -8,15 +8,15 @@ package evento_juego;
 public class Espectador implements Observador{
 
     /* El id para poder identificar al usuario. */
-    String idEspectador;
+    private String idEspectador;
     /* Personaje al que va a apoyar el espectador al visualizar el evento. */
-    String personajeApoyado;
+    private String personajeApoyado;
     /* El evento del juego que esta viendo el espectador. */
-    EventoDeJuego evento;
+    private EventoDeJuego evento;
     /* El estado actual del juego */
-    String estadoActual;
+    private String estadoActual;
     /* La bitacora que va a tener el espectador */
-    Bitacora bitacora;
+    private Bitacora bitacora;
 
     /**
      * Constructor por parametros de un espectador.
@@ -46,6 +46,7 @@ public class Espectador implements Observador{
     @Override
     public void actualizar(){
         estadoActual = evento.getEstadoDelJuego();
+        gano();
         bitacora.escribir(estadoActual);
         verEstadoActual();
     }
@@ -80,6 +81,16 @@ public class Espectador implements Observador{
         String edo = "\nidEspectador: " + idEspectador + "\n";
         edo += estadoActual;
         System.out.println(edo);
+    }
+
+    public void gano(){
+        if(estadoActual.toLowerCase().contains("gano")){
+            if(estadoActual.contains(personajeApoyado)){
+                estadoActual = "El personaje que apoyabas gano!!! (:";
+            }else{
+                estadoActual = "El personaje que apoyabas perdio ):";
+            }
+        }
     }
 
 }

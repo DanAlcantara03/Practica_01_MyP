@@ -11,9 +11,9 @@ import java.util.LinkedList;
 public class EventoDeJuego implements Sujeto{
 
     /* La lista de los espectadores */
-    LinkedList<Espectador> espectadores;
+    private LinkedList<Espectador> espectadores;
     /* String que va a tener el estado del juego. */
-    String estadoDelJuego;
+    private String estadoDelJuego;
 
     /**
      * Getter del estado actual del Juego.

@@ -18,7 +18,7 @@ public class Korby extends Personaje{
      */
     public Korby(){
         super(200,30,.3);
-        poder = new PoderPorDefecto();
+        poder = new PoderPorDefectoK();
     }
 
     /**
@@ -38,7 +38,6 @@ public class Korby extends Personaje{
     public void comer(PoderKorby poder){
         this.poder = poder;
     }
-
 
     /**
      * Metodo para poder visualizar a Korby y sus atributos.

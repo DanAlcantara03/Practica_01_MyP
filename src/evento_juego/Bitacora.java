@@ -9,9 +9,9 @@ import java.io.*;
 public class Bitacora {
 
     /* El path en el que va a estar guardada la bitacora */
-    String path;
+    private String path;
     /* El objeto con el que vamos a escribir la bitacora */
-    Writer bitacora;
+    private Writer bitacora;
 
     /**
      * Constructor de la clase Bitacora.
