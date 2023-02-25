@@ -1,10 +1,17 @@
-package personajes.korby; 
+package personajes.korby;
+
+import personajes.Personaje;
 
 /**
  * Interfaz que modela un poder en especifico que puede llegar a tener Korby 
  * comiendose a otro personaje de Nientiendo.
  */
 public interface PoderKorby {
+
+    /* Mensaje por defecto del ataque que viene en la interfaz. */
+    public String MSJ_ATAQUE = " golpeo a ";
+    /* Mensaje por defecto al defenderse que viene en la interfaz. */
+    public String MSJ_DEFENDIENDO = " se defendio de ";
 
     /**
      * Metodo que posiblemente va a aumentar el ataque de Korby mediante un poder que le 
@@ -33,18 +40,20 @@ public interface PoderKorby {
     /**
      * Metodo que nos ayuda a visualizar como es que se le agrega mas ataque a Korby
      * al convertirse en otro personaje de Nientiendo comiendoselo.
+     * @param a El personaje al que estás atacando.
      * @return Un string con las especificaciónes de como con este poder es que Korby
      * aumento su ataque o "" en caso de que este poder no suba el ataque si no solo 
      * la defensa.
     */
-    public String mensajeAtaque();
+    public String mensajeAtaque(Personaje a);
 
     /**
      * Metodo que nos ayuda a visualizar como es que se le agrega la defensa a Korby
      * al convertirse en otro personaje de Nientiendo comiendoselo
+     * @param p El personaje del que te estas defendiendo
      * @return Un string con las especificaciónes de como con este poder es que Korby
      * aumento su defensa o "" en caso de que este poder no suba la defensa si no solo
      * el ataque.
      */
-    public String mensajeDefensa();
+    public String mensajeDefensa(Personaje p);
 }

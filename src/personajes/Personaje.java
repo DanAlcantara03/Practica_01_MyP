@@ -117,10 +117,10 @@ public abstract class Personaje{
      * @return Nos devuelve una cadena con lo que paso en este momento de la pelea.
      */
     private String bajarVida(Personaje a){
-        String msj = mensajeAtaque(a, this);
+        String msj = a.mensajeAtaque(getNombre());
         if(defensaActiva){
             vida -= (a.ataque()*(1-defensa()));
-            msj += ",\nPero " + mensajeDefensa(this, a) + ".";
+            msj += ",\nPero " + mensajeDefensa(a.getNombre()) + ".";
         }else{
             msj += ".";
             vida -= a.ataque();
@@ -150,18 +150,16 @@ public abstract class Personaje{
     /**
      * Metodo auxiliar pensado para que cada que ataques a un personaje
      * te devuleva el como lo atacaste.
-     * @param p Es el personaje que ataca.
-     * @param a Es el personaje que es atacado.
+     * @param a Es el nombre del personaje que es atacado.
      * @return Un string de como el personaje p ataco al personaje a.
      */
-    protected abstract String mensajeAtaque(Personaje p, Personaje a);
+    protected abstract String mensajeAtaque(String a);
 
     /**
      * Metodo auxiliar pensado para que cada que alguien te ataque, si es que te
      * alcancaste a defender te devuelva el como te defendiste.
-     * @param d Es el personaje que se defiende.
-     * @param p Es el personaje que ataca.
+     * @param p Es el nombre del personaje que ataca.
      * @return Un string de como el personaje d se defendio del personaje p.
      */
-    protected abstract String mensajeDefensa(Personaje d, Personaje p);
+    protected abstract String mensajeDefensa(String p);
 }

@@ -41,7 +41,7 @@ public class Dittuu extends Personaje{
 
     /**
      * Metodo que nos ayuda a visualizar como va a ser Dittuu y sus caracteristicas.
-     * @return La información de ditu o el dibujo en ascii de Dittuu.
+     * @return La información de ditu y el dibujo en ascii de Dittuu.
      */
     @Override
     public String verPersonaje(){
@@ -59,6 +59,11 @@ public class Dittuu extends Personaje{
         p+="⠀⣶⡏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿"+"\n";
         p+="⠿⣇⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⠀⠀⠀⠀⢀⣀⣸⠿"+"\n";
         p+="⠀⠀⠙⢳⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⡞⠛⠛⠛⠛⠛⠛⣶⣶⣶⣶⡞⠛⠃"+"\n";
+        p+="##########################################\n";
+        p+="Nombre: " + this.getNombre() + "\n";
+        p+="Vida: " + this.getVida() + "\n";
+        p+="Ataque: " + this.getAtaque() + "\n";
+        p+="Defensa: " + this.getDefensa() + "\n";
         return p;
     }
 
@@ -85,17 +90,16 @@ public class Dittuu extends Personaje{
     }
 
     /**
-     * Metodo auxiliar pensado para que cada que ataques a un personaje
-     * te devuleva el como lo atacaste.
-     * Es el mensaje de ataque que va a tener el personaje dependiendo de en que 
+     * Metodo auxiliar pensado para que cada que Dittuu golpee a un personaje
+     * devuleva el como lo ataco.
+     * Es el mensaje de ataque que va a tener Dittuu, dependiendo de en que
      * chinpokomon se transforme.
-     * @param p Es el personaje que ataca.
-     * @param a Es el personaje que es atacado.
-     * @return Un string de como el personaje p ataco al personaje a.
+     * @param a Es el nombre del personaje que es atacado por Dittuu.
+     * @return Un string de como dittuu ataco al personaje a.
      */
     @Override
-    public String mensajeAtaque(Personaje p, Personaje a){
-        return poder.mensajeAtaque();
+    public String mensajeAtaque(String a){
+        return poder.mensajeAtaque(a);
     }
 
     /**
@@ -103,12 +107,11 @@ public class Dittuu extends Personaje{
      * alcancaste a defender te devuelva el como te defendiste.
      * Es el mensaje de defensa que va a tener el personaje dependiendo de en que
      * chinpokomon se transforme.
-     * @param d Es el personaje que se defiende.
-     * @param p Es el personaje que ataca.
+     * @param p Es el nombre del personaje que ataca a Dittuu.
      * @return Un string de como el personaje d se defendio del personaje p.
      */
     @Override
-    public String mensajeDefensa(Personaje d, Personaje p){
-        return poder.mensajeDefensa();
+    public String mensajeDefensa(String p){
+        return poder.mensajeDefensa(p);
     }
 }

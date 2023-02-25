@@ -6,6 +6,11 @@ package personajes.dittuu;
  */
 public interface PoderDittuu {
 
+    /* Mensaje por defecto del ataque que viene en la interfaz. */
+    public String MSJ_ATAQUE = " golpeo a ";
+    /* Mensaje por defecto al defenderse que viene en la interfaz. */
+    public String MSJ_DEFENDIENDO = " se defendio de ";
+
     /**
      * Metodo que posiblemente va a aumentar el ataque de dittuu mediante un poder que le 
      * especifiquemos en la implementación.
@@ -33,18 +38,16 @@ public interface PoderDittuu {
     /**
      * Metodo que nos ayuda a visualizar como es que se le agrega mas ataque a Dittuu
      * al convertirse en otro chinpokomon con solo mirarlo.
-     * @return Un string con las especificaciónes de como con este poder es que dittu
-     * aumento su ataque o "" en caso de que este poder no suba el ataque si no solo 
-     * la defensa.
+     * @param a Es el nombre del personaje que es atacado por Dittuu.
+     * @return Un string de como es que Dittuu ataco al personaje p.
     */
-    public String mensajeAtaque();
+    public String mensajeAtaque(String a);
 
     /**
      * Metodo que nos ayuda a visualizar como es que se le agrega la defensa a Dittuu
      * al convertirse en otro chinpokomon con solo mirarlo
-     * @return Un string con las especificaciónes de como con este poder es que dittuu
-     * aumento su defensa o "" en caso de que este poder no suba la defensa si no solo
-     * el ataque.
+     * @param p Es el nombre del personaje que ataca a Dittuu.
+     * @return Un string de como es que Dittuu se defendió de el personaje p
      */
-    public String mensajeDefensa();
+    public String mensajeDefensa(String p);
 }

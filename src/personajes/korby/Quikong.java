@@ -1,5 +1,7 @@
 package personajes.korby;
 
+import personajes.Personaje;
+
 /**
  * / Escribe lo que representa esta clase
  */
@@ -16,7 +18,7 @@ public class Quikong implements PoderKorby{
     }
 
     @Override
-    public String mensajeAtaque(){
+    public String mensajeAtaque(Personaje a){
         String msj = "";
         msj += "Korby se ha comido a Quikong y aplasta a sus oponentes con sus puños";
         msj += "Su ataque se ha aumentado 40";
@@ -24,7 +26,7 @@ public class Quikong implements PoderKorby{
     }
 
     @Override
-    public String mensajeDefensa(){
+    public String mensajeDefensa(Personaje p){
         String msj = "";
         return msj;
     }

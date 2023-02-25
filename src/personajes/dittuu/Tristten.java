@@ -25,7 +25,6 @@ public class Tristten implements PoderDittuu{
     @Override
     public String mensajeDefensa(){
         String msj = "";
-        //Lee las especificaciones para este metodo
         return msj;
     }
 }

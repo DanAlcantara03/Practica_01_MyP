@@ -1,10 +1,17 @@
-package personajes.meganman; 
+package personajes.meganman;
+
+import personajes.Personaje;
 
 /**
  * Interfaz que modela un poder en especifico que puede llegar a tener MeganMan 
  * al derrotar algún robot y adquirir sus poderes.
  */
 public interface PoderMeganMan{
+
+    /* Mensaje por defecto del ataque que viene en la interfaz. */
+    public String MSJ_ATAQUE = " golpeo a ";
+    /* Mensaje por defecto al defenderse que viene en la interfaz. */
+    public String MSJ_DEFENDIENDO = " se defendio de ";
 
     /**
      * Metodo que posiblemente va a aumentar el ataque de MeganMan mediante un poder que le 
@@ -31,20 +38,22 @@ public interface PoderMeganMan{
     public double poderDefensa();
 
     /**
-     * Metodo que nos ayuda a visualizar como es que se le agrega mas ataque a MeganMan
-     * al derrotar un robot y adquirir sus poderes.
+     * Metodo que nos ayuda a visualizar como es que al agregarsele mas poder a meganman
+     * ataca con mayor fuerza a sus oponentes.
+     * @param p Meganman.
+     * @param a Es el personaje que es atacado.
      * @return Un string con las especificaciónes de como con este poder es que MeganMan
-     * aumento su ataque o "" en caso de que este poder no suba el ataque si no solo 
-     * la defensa.
+     * 
     */
-    public String mensajeAtaque();
+    public String mensajeAtaque(Personaje p, Personaje a);
 
     /**
-     * Metodo que nos ayuda a visualizar como es que se le agrega la defensa a MeganMan
-     * al derrotar un robot y adquirir sus poderes.
-     * @return Un string con las especificaciónes de como con este poder es que MeganMan
-     * aumento su defensa o "" en caso de que este poder no suba la defensa si no solo
-     * el ataque.
+     * Metodo que nos ayuda a visualizar como es que al agregarle mas poder de defensa a
+     * meganman se defiende con mayor eficazia de sus oponentes.
+     * @param d Meganman.
+     * @param p Es el personaje que ataca.
+     * @return Un string con las especificaciones de como con este poder es que MeganMan
+     * se defendio del personaje p.
      */
-    public String mensajeDefensa();
+    public String mensajeDefensa(Personaje d, Personaje p);
 }
