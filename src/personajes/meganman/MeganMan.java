@@ -23,6 +23,14 @@ public class MeganMan extends Personaje{
     }
 
     /**
+     * Getter del nombre del personaje
+     * @return nombre del personaje
+     */
+    public String getNombre(){
+        return "MeganMan";
+    }
+
+    /**
      * Metodo que nos ayuda a que MeganMan adquiera los poderes de robots derrotados
      * en la franquicia copcam y por ende que adquiera las habilidades de dichos personajes,
      * por el momento solo hay 4 poderes activos: PoderPorDefecto, Bake, GranOjo y Wachador.
@@ -30,14 +38,6 @@ public class MeganMan extends Personaje{
      */
     public void replicar(PoderMeganMan poder){
         this.poder = poder;
-    }
-
-    /**
-     * Getter del nombre del personaje
-     * @return nombre del personaje
-     */
-    public String getNombre(){
-        return "MeganMan";
     }
 
     @Override

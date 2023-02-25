@@ -13,7 +13,6 @@ public class ProbarJuego {
         Peleas combates = new Peleas();
         /* El evento de juego que vamos a transmitir */
         EventoDeJuego evento = new EventoDeJuego();
-
         /* Los espectadores. */
         Espectador esp1 = new Espectador("esp1", "Korby", evento);
         Espectador esp2 = new Espectador("esp2", "MeganMan", evento);

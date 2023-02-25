@@ -83,6 +83,11 @@ public class Espectador implements Observador{
         System.out.println(edo);
     }
 
+    /**
+     * Metodo auxiliar para personalizar quien fue el que gano con base al personaje
+     * apoyado, si el personaje del espectador gano, se imprime personajeApoyado gano,
+     * en caso contrario se imprime personajeApoyado perdio.
+     */
     public void gano(){
         if(estadoActual.toLowerCase().contains("gano")){
             if(estadoActual.contains(personajeApoyado)){

@@ -52,7 +52,7 @@ public class Peleas{
                         poderAleatorioMeganMan();
                     }
                 }
-                defenderseAleatrio(korby);
+                defenderseAleatorio(korby);
             }
             c = r.nextInt(2);
             if(estaVivo(dittuu)){
@@ -67,7 +67,7 @@ public class Peleas{
                         poderAleatorioMeganMan();
                     }
                 }
-                defenderseAleatrio(dittuu);
+                defenderseAleatorio(dittuu);
             }
             c = r.nextInt(2);
             if(estaVivo(meganman)){
@@ -82,7 +82,7 @@ public class Peleas{
                         poderAleatorioDittuu();
                     }
                 }
-                defenderseAleatrio(meganman);
+                defenderseAleatorio(meganman);
             }
         }
 
@@ -157,7 +157,7 @@ public class Peleas{
      * Metodo que nos ayuda a defendernos con una probabilidad de 1/3
      * @param p El personaje que queremos que se defienda.
      */
-    private void defenderseAleatrio(Personaje p){
+    private void defenderseAleatorio(Personaje p){
         int c = r.nextInt(3);
         if(c == 0){
             p.defenderse();
